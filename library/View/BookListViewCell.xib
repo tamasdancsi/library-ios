@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BookListViewCell" rowHeight="100" id="hpR-iO-McG" customClass="BookListViewCell" customModule="library" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hpR-iO-McG" id="Eo1-XL-5od">
+                <rect key="frame" x="0.0" y="0.0" width="341" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcG-Dh-65x">
+                        <rect key="frame" x="16" y="11" width="325" height="19.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="wYe-Fl-iIl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3b-xz-rYR">
+                        <rect key="frame" x="16" y="38.5" width="325" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="jRA-RF-HwX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publish year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bA5-C9-llL">
+                        <rect key="frame" x="16" y="69" width="317" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Gu5-4C-OyX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="J3b-xz-rYR" firstAttribute="leading" secondItem="Eo1-XL-5od" secondAttribute="leading" constant="16" id="1Zi-nW-BEL"/>
+                    <constraint firstItem="bA5-C9-llL" firstAttribute="leading" secondItem="Eo1-XL-5od" secondAttribute="leading" constant="16" id="4cn-gd-4BM"/>
+                    <constraint firstAttribute="bottom" secondItem="bA5-C9-llL" secondAttribute="bottom" constant="9.5" id="7AJ-1N-WZM"/>
+                    <constraint firstItem="kcG-Dh-65x" firstAttribute="top" secondItem="Eo1-XL-5od" secondAttribute="top" constant="11" id="JjT-pM-V6c"/>
+                    <constraint firstAttribute="trailing" secondItem="J3b-xz-rYR" secondAttribute="trailing" id="Xp9-CB-cK3"/>
+                    <constraint firstItem="J3b-xz-rYR" firstAttribute="top" secondItem="kcG-Dh-65x" secondAttribute="bottom" constant="8" id="Y5h-xX-iwx"/>
+                    <constraint firstAttribute="trailing" secondItem="bA5-C9-llL" secondAttribute="trailing" constant="8" id="hUG-4i-iii"/>
+                    <constraint firstAttribute="trailing" secondItem="kcG-Dh-65x" secondAttribute="trailing" id="qAQ-Tq-iKa"/>
+                    <constraint firstItem="kcG-Dh-65x" firstAttribute="leading" secondItem="Eo1-XL-5od" secondAttribute="leading" constant="16" id="qTY-NA-i0P"/>
+                    <constraint firstItem="bA5-C9-llL" firstAttribute="top" secondItem="J3b-xz-rYR" secondAttribute="bottom" constant="12.5" id="uff-jr-g7R"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="authorLabel" destination="J3b-xz-rYR" id="Gr6-W2-NjY"/>
+                <outlet property="bookTitleLabel" destination="kcG-Dh-65x" id="1n7-gA-8Pc"/>
+                <outlet property="publishYearLabel" destination="bA5-C9-llL" id="bHO-ID-sUm"/>
+            </connections>
+            <point key="canvasLocation" x="207.5" y="115"/>
+        </tableViewCell>
+    </objects>
+</document>
