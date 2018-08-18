@@ -41,8 +41,8 @@ extension ListViewController {
     private func initSearchController() {
         searchController.hidesNavigationBarDuringPresentation = true
         searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = NSLocalizedString("placeholder_search", comment: "")
-        tableView.tableHeaderView = searchController.searchBar
+        searchBar.placeholder = NSLocalizedString("placeholder_search", comment: "")
+        tableView.tableHeaderView = searchBar
     }
 
     private func initBindings() {
@@ -62,5 +62,10 @@ extension ListViewController {
             .map { String(format: NSLocalizedString("title_n_results", comment: ""), $0.count) }
             .drive(navigationItem.rx.title)
             .disposed(by: disposeBag)
+
+        viewModel.isLoading.bind { (next) in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = next
+        }
+        .disposed(by: disposeBag)
     }
 }

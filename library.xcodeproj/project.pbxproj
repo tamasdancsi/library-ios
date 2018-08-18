@@ -58,6 +58,7 @@
 		9D9A4445C41C309EE8D47B75 /* Pods-library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-library.debug.xcconfig"; path = "Pods/Target Support Files/Pods-library/Pods-library.debug.xcconfig"; sourceTree = "<group>"; };
 		E63C9CB1212421610069B86C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E63C9CB3212423C10069B86C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		E65E967E2127F8E5003BC4A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E690A014212419AA00A74C28 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E690A016212419EB00A74C28 /* BookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookViewController.xib; sourceTree = "<group>"; };
 		E690A018212419F900A74C28 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
@@ -441,6 +442,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E6D89101211B06D400F5CB8A /* Base */,
+				E65E967E2127F8E5003BC4A3 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

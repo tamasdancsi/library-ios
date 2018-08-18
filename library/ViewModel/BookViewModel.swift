@@ -1,8 +1,9 @@
 
 class BookViewModel {
 
-    let book: OpenLibraryResult!
-    init(_ book: OpenLibraryResult) {
+    let book: OpenLibraryBook!
+
+    init(_ book: OpenLibraryBook) {
         self.book = book
     }
 }
