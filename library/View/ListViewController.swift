@@ -55,7 +55,7 @@ extension ListViewController {
             .disposed(by: disposeBag)
 
         searchBar.rx.text.orEmpty
-            .bind(to: viewModel.query)
+            .bind(to: viewModel.queryVariable)
             .disposed(by: disposeBag)
 
         viewModel.data.asDriver()
