@@ -8,7 +8,6 @@ class ListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     private let searchController = UISearchController(searchResultsController: nil)
-    private var searchBar: UISearchBar { return searchController.searchBar }
 
     private let viewModel = ListViewModel()
     private let disposeBag = DisposeBag()
@@ -41,11 +40,13 @@ extension ListViewController {
     private func initSearchController() {
         searchController.hidesNavigationBarDuringPresentation = true
         searchController.dimsBackgroundDuringPresentation = false
-        searchBar.placeholder = NSLocalizedString("placeholder_search", comment: "")
-        tableView.tableHeaderView = searchBar
+        searchController.searchBar.placeholder = NSLocalizedString("placeholder_search", comment: "")
+        tableView.tableHeaderView = searchController.searchBar
+        definesPresentationContext = true
     }
 
     private func initBindings() {
+        // Connecting tableview
         viewModel.data
             .drive(tableView.rx.items(cellIdentifier: Constants.CellIdentifier.BookListView, cellType: BookListViewCell.self)) { _, book, cell in
                 cell.bookTitleLabel.text = book.title
@@ -54,18 +55,32 @@ extension ListViewController {
             }
             .disposed(by: disposeBag)
 
-        searchBar.rx.text.orEmpty
+        // Book selection handler
+        tableView.rx
+            .modelSelected(OpenLibraryBook.self)
+            .subscribe(onNext: { [weak self] book in
+                self?.viewModel.openBook(book: book)
+            })
+            .disposed(by: disposeBag)
+
+        // Connecting query string to searchbar
+        searchController.searchBar.rx.text.orEmpty
             .bind(to: viewModel.queryVariable)
             .disposed(by: disposeBag)
 
+        // Updating navigation title
         viewModel.data.asDriver()
-            .map { String(format: NSLocalizedString("title_n_results", comment: ""), $0.count) }
+            .map { $0.count == 0
+                ? NSLocalizedString("title_my_books", comment: "")
+                : String(format: NSLocalizedString("title_n_results", comment: ""), $0.count) }
             .drive(navigationItem.rx.title)
             .disposed(by: disposeBag)
 
+        // Updating loading spinner
         viewModel.isLoading.bind { (next) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = next
-        }
-        .disposed(by: disposeBag)
+            }
+            .disposed(by: disposeBag)
     }
 }
+

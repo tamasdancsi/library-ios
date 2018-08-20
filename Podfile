@@ -11,7 +11,10 @@ target 'library' do
 
   target 'libraryTests' do
     inherit! :search_paths
-    # Pods for testing
+
+# Pods for testing
+    pod 'RxBlocking', '~> 4.0'
+    pod 'RxTest',     '~> 4.0'
   end
 
 end

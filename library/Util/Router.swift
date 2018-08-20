@@ -19,7 +19,10 @@ extension Router {
 // MARK: - Book view related
 extension Router {
 
-    func pushBookViewController() {
-        navigationController.pushViewController(BookViewController(), animated: true)
+    func pushBookViewController(book: OpenLibraryBook) {
+        navigationController.pushViewController(
+            BookViewController(book: book),
+            animated: true
+        )
     }
 }
