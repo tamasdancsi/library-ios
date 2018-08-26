@@ -77,8 +77,10 @@ extension ListViewController {
             .disposed(by: disposeBag)
 
         // Updating loading spinner
-        viewModel.isLoading.bind { (next) in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = next
+        viewModel.isLoading
+            .observeOn(MainScheduler.instance)
+            .bind { (next) in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = next
             }
             .disposed(by: disposeBag)
     }

@@ -12,7 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookViewController" customModule="library" customModuleProvider="target">
             <connections>
+                <outlet property="descriptionLabel" destination="juc-rM-sEi" id="StD-P9-OmH"/>
+                <outlet property="goodReadsButton" destination="8qf-c9-uQn" id="vUW-wT-8Of"/>
+                <outlet property="openLibraryButton" destination="9Dc-WW-qbi" id="eWr-2S-b6Y"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7BD-XT-cfe"/>
+                <outlet property="yearLabel" destination="2kZ-fU-aij" id="AUt-3o-Q00"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -39,10 +43,16 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qf-c9-uQn">
                             <rect key="frame" x="0.0" y="587" width="375" height="30"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="onGoodReadsButtonTap:" destination="-1" eventType="touchUpInside" id="jDE-d0-hwr"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dc-WW-qbi">
                             <rect key="frame" x="0.0" y="617" width="375" height="30"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="onOpenLibraryButtonTap:" destination="-1" eventType="touchUpInside" id="Wsu-7d-7EC"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

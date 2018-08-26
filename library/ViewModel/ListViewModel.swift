@@ -4,27 +4,43 @@ import RxCocoa
 
 class ListViewModel {
 
-    // Reference to open library service
-    fileprivate let openLibraryService = OpenLibraryService()
+    //
+    // Dependencies and properties
+    //
 
-    // Variable to hold query string
+    fileprivate let openLibraryService = OpenLibraryService()
+    fileprivate let disposeBag = DisposeBag()
+
+    //
+    // Variables and observers
+    //
+
     var queryVariable = BehaviorRelay(value: "")
 
-    // Is loading flag to manage loading state
     fileprivate let isLoadingVariable = BehaviorRelay(value: false)
     var isLoading: Observable<Bool> { return isLoadingVariable.asObservable() }
 
-    // Update data whenever query string changes
-    lazy var data: Driver<[OpenLibraryBook]> = {
-        return self.queryVariable.asObservable()
+    fileprivate var dataVariable: BehaviorRelay<[OpenLibraryBook]> = BehaviorRelay(value: [])
+    var data: Driver<[OpenLibraryBook]> { return dataVariable.asDriver() }
+
+    //
+    // Initialization
+    //
+
+    init() {
+        queryVariable.asObservable()
             .throttle(Constants.Delay.ListSearch, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .do(onNext: { [unowned self] _ in self.isLoadingVariable.accept(true)  })
             .flatMapLatest(openLibraryService.search)
-            .startWith([])
-            .asDriver(onErrorJustReturn: [])
-            .do(onNext: { [unowned self] _ in self.isLoadingVariable.accept(false) })
-    }()
+            .do(onNext: { [unowned self] _ in self.isLoadingVariable.accept(false)  })
+            .bind(to: dataVariable)
+            .disposed(by: disposeBag)
+    }
+
+    //
+    // Event handlers
+    //
 
     func openBook(book: OpenLibraryBook) {
         Router.shared.pushBookViewController(book: book)
