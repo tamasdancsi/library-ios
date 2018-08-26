@@ -26,7 +26,7 @@
 		E6D890FA211B06D300F5CB8A /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D890F9211B06D300F5CB8A /* BookViewController.swift */; };
 		E6D890FF211B06D400F5CB8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6D890FE211B06D400F5CB8A /* Assets.xcassets */; };
 		E6D89102211B06D400F5CB8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D89100211B06D400F5CB8A /* LaunchScreen.storyboard */; };
-		E6D8910D211B06D400F5CB8A /* libraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D8910C211B06D400F5CB8A /* libraryTests.swift */; };
+		E6D8910D211B06D400F5CB8A /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D8910C211B06D400F5CB8A /* ListViewModelTests.swift */; };
 		E6D8911D211B2B8A00F5CB8A /* OpenLibraryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D8911C211B2B8A00F5CB8A /* OpenLibraryResult.swift */; };
 		E6D8911F211B304600F5CB8A /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D8911E211B304600F5CB8A /* BookViewModel.swift */; };
 		E6D89121211B45D000F5CB8A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D89120211B45D000F5CB8A /* ListViewController.swift */; };
@@ -74,7 +74,7 @@
 		E6D89101211B06D400F5CB8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6D89103211B06D400F5CB8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6D89108211B06D400F5CB8A /* libraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = libraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6D8910C211B06D400F5CB8A /* libraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = libraryTests.swift; sourceTree = "<group>"; };
+		E6D8910C211B06D400F5CB8A /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		E6D8910E211B06D400F5CB8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6D8911C211B2B8A00F5CB8A /* OpenLibraryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryResult.swift; sourceTree = "<group>"; };
 		E6D8911E211B304600F5CB8A /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 		E6D8910B211B06D400F5CB8A /* libraryTests */ = {
 			isa = PBXGroup;
 			children = (
-				E6D8910C211B06D400F5CB8A /* libraryTests.swift */,
+				E6D8910C211B06D400F5CB8A /* ListViewModelTests.swift */,
 				E6D8910E211B06D400F5CB8A /* Info.plist */,
 			);
 			path = libraryTests;
@@ -443,7 +443,7 @@
 				E6D89130211B4C7B00F5CB8A /* OpenLibraryService.swift in Sources */,
 				E6D89124211B468F00F5CB8A /* Router.swift in Sources */,
 				E690A01A212419FF00A74C28 /* Constants.swift in Sources */,
-				E6D8910D211B06D400F5CB8A /* libraryTests.swift in Sources */,
+				E6D8910D211B06D400F5CB8A /* ListViewModelTests.swift in Sources */,
 				E63C9CB5212423C10069B86C /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
