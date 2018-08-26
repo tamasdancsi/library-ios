@@ -26,21 +26,35 @@ extension BookViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        initBindings()
+    }
 
-        //
-        // TODO: update to dynamic labels
-        //
+    private func initBindings() {
+        // Updating view controller title
+        viewModel.title.bind(onNext: { [weak self] title in
+            self?.title = title
+        }).disposed(by: disposeBag)
 
-        title = viewModel.title()
+        // Updating year label
+        viewModel.year
+            .bind(to: yearLabel.rx.text)
+            .disposed(by: disposeBag)
 
-        yearLabel.text = viewModel.bookYearString()
+        // Updating description label
+        viewModel.description
+            .bind(to: descriptionLabel.rx.text)
+            .disposed(by: disposeBag)
 
-        descriptionLabel.text = viewModel.descriptionsString()
-
-        goodReadsButton.isHidden = viewModel.isGoodReadsButtonHidden()
+        // Updating good reads button
+        viewModel.isGoodReadsButtonHidden
+            .bind(to: goodReadsButton.rx.isHidden)
+            .disposed(by: disposeBag)
         goodReadsButton.setTitle(NSLocalizedString("button_open_goodreads", comment: ""), for: .normal)
 
-        openLibraryButton.isHidden = viewModel.isOpenLibraryButtonHidden()
+        // Updating open library button
+        viewModel.isOpenLibraryButtonHidden
+            .bind(to: openLibraryButton.rx.isHidden)
+            .disposed(by: disposeBag)
         openLibraryButton.setTitle(NSLocalizedString("button_open_openlibrary", comment: ""), for: .normal)
     }
 }
@@ -56,4 +70,3 @@ extension BookViewController {
         viewModel.openOnOpenLibrary()
     }
 }
-

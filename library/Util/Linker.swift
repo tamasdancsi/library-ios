@@ -6,7 +6,7 @@ final class Linker {
     static let shared = Linker()
 }
 
-// MARK: - Good reads
+// MARK: - Linking services
 extension Linker {
 
     func openOnGoodReads(goodReadsId: String?) {
@@ -14,19 +14,15 @@ extension Linker {
             print("[Linker] warning: empty good reads id")
             return
         }
-        openLink(url: "https://www.goodreads.com/book/show/\(id)")
+        openLink(url: String(format: Constants.URL.GoodReads, id))
     }
-}
-
-// MARK: - Open library reads
-extension Linker {
 
     func openOnOpenLibrary(openLibraryId: String?) {
         guard let id = openLibraryId else {
             print("[Linker] warning: empty open library reads id")
             return
         }
-        openLink(url: "https://openlibrary.org/\(id)")
+        openLink(url: String(format: Constants.URL.OpenLibrary, id))
     }
 }
 

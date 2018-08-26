@@ -12,7 +12,7 @@ struct OpenLibraryService {
         return URLSession.shared.rx.data(request: URLRequest(url: url))
             .retry(3)
             .map(parse)
-            .share(replay: 1) // TODO: TEST
+            .share(replay: 1)
     }
 
     private func parse(_data: Data?) -> [OpenLibraryBook] {

@@ -28,6 +28,10 @@ class ListViewModel {
     //
 
     init() {
+        initBindings()
+    }
+
+    func initBindings() {
         queryVariable.asObservable()
             .throttle(Constants.Delay.ListSearch, scheduler: MainScheduler.instance)
             .distinctUntilChanged()

@@ -1,46 +1,66 @@
 import Foundation
+import RxSwift
+import RxCocoa
 
 class BookViewModel {
 
     //
     // Properties
     //
+    fileprivate var book: OpenLibraryBook!
 
-    fileprivate let book: OpenLibraryBook!
+    fileprivate let titleVariable: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var title: Observable<String> { return titleVariable.asObservable() }
+
+    fileprivate let yearVariable: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var year: Observable<String> { return yearVariable.asObservable() }
+
+    fileprivate let descriptionVariable: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var description: Observable<String> { return descriptionVariable.asObservable() }
+
+    fileprivate let goodReadsIdVariable: BehaviorRelay<String?> = BehaviorRelay(value: nil)
+    var goodReadsId: Observable<String?> { return goodReadsIdVariable.asObservable() }
+
+    fileprivate let openLibraryIdVariable: BehaviorRelay<String?> = BehaviorRelay(value: nil)
+    var openLibraryId: Observable<String?> { return openLibraryIdVariable.asObservable() }
+
+    fileprivate let isOpenLibraryButtonHiddenVariable: BehaviorRelay<Bool> = BehaviorRelay(value: true)
+    var isOpenLibraryButtonHidden: Observable<Bool> { return isOpenLibraryButtonHiddenVariable.asObservable() }
+
+    fileprivate let isGoodReadsButtonHiddenVariable: BehaviorRelay<Bool> = BehaviorRelay(value: true)
+    var isGoodReadsButtonHidden: Observable<Bool> { return isGoodReadsButtonHiddenVariable.asObservable() }
 
     //
-    // Initialization
+    // Initialization and book updating
     //
 
     init(_ book: OpenLibraryBook) {
+        updateBook(book)
+    }
+
+    func updateBook(_ book: OpenLibraryBook) {
         self.book = book
-    }
 
-    //
-    // UI helpers
-    //
-
-    func title() -> String? {
-        return book.title
-    }
-
-    func bookYearString() -> String {
-        guard let year = book.firstPublishYear else {
-            return ""
+        if let title = book.title {
+            titleVariable.accept(title)
         }
-        return "\(year)"
-    }
 
-    func descriptionsString() -> String {
-        return "Todo: description"
-    }
+        if let year = book.firstPublishYear {
+            yearVariable.accept("\(year)")
+        }
 
-    func isGoodReadsButtonHidden() -> Bool {
-        return book.idGoodreads == nil || (book.idGoodreads?.count)! == 0
-    }
+        // TODO: description
+        if let description = book.subtitle {
+            descriptionVariable.accept("\(description)")
+        }
 
-    func isOpenLibraryButtonHidden() -> Bool {
-        return book.key == nil
+        let grId = book.idGoodreads?[0]
+        goodReadsIdVariable.accept(grId)
+        isGoodReadsButtonHiddenVariable.accept(grId == nil)
+
+        let olId = book.key
+        openLibraryIdVariable.accept(olId)
+        isOpenLibraryButtonHiddenVariable.accept(olId == nil)
     }
 
     //
@@ -48,10 +68,11 @@ class BookViewModel {
     //
 
     func openOnGoodReads() {
-        Linker.shared.openOnGoodReads(goodReadsId: book.idGoodreads?[0])
+        Linker.shared.openOnGoodReads(goodReadsId: goodReadsIdVariable.value)
     }
 
     func openOnOpenLibrary() {
-        Linker.shared.openOnOpenLibrary(openLibraryId: book.key)
+        Linker.shared.openOnOpenLibrary(openLibraryId: openLibraryIdVariable.value)
     }
 }
+
