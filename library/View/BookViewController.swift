@@ -1,11 +1,14 @@
 import UIKit
 import RxSwift
+import SDWebImage
 
 class BookViewController: UIViewController {
 
     @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UITextView!
+    @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var goodReadsButton: UIButton!
+    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var openLibraryButton: UIButton!
 
     private var viewModel: BookViewModel!
@@ -40,9 +43,29 @@ extension BookViewController {
             .bind(to: yearLabel.rx.text)
             .disposed(by: disposeBag)
 
-        // Updating description label
-        viewModel.description
-            .bind(to: descriptionLabel.rx.text)
+        // Updating author label
+        viewModel.author
+            .bind(to: authorLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        // Updating cover image
+        viewModel.coverImage
+            .subscribe(
+                onNext: { [weak self] imageUrl in
+                    guard let url = URL(string: imageUrl) else {
+                        return
+                    }
+                    self?.loadingIndicator.isHidden = false
+                    self?.coverImageView.sd_setImage(with: url, completed: { [weak self] (image, error, imageCacheType, url) in
+                        self?.loadingIndicator.isHidden = true
+                    })
+                }, onError: { [weak self] error in
+                    self?.loadingIndicator.isHidden = true
+                }, onCompleted: {[weak self] in
+                    self?.loadingIndicator.isHidden = true
+                }, onDisposed: {[weak self] in
+                    self?.loadingIndicator.isHidden = true
+            })
             .disposed(by: disposeBag)
 
         // Updating good reads button
@@ -70,3 +93,4 @@ extension BookViewController {
         viewModel.openOnOpenLibrary()
     }
 }
+

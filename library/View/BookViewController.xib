@@ -12,8 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookViewController" customModule="library" customModuleProvider="target">
             <connections>
-                <outlet property="descriptionLabel" destination="juc-rM-sEi" id="StD-P9-OmH"/>
+                <outlet property="authorLabel" destination="baM-rZ-el1" id="amD-KT-e0e"/>
+                <outlet property="coverImageView" destination="Kqg-gY-Jss" id="RVx-hW-UKg"/>
                 <outlet property="goodReadsButton" destination="8qf-c9-uQn" id="vUW-wT-8Of"/>
+                <outlet property="loadingIndicator" destination="He1-TI-3r8" id="sGU-Eq-QPn"/>
                 <outlet property="openLibraryButton" destination="9Dc-WW-qbi" id="eWr-2S-b6Y"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7BD-XT-cfe"/>
                 <outlet property="yearLabel" destination="2kZ-fU-aij" id="AUt-3o-Q00"/>
@@ -27,21 +29,39 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="U5u-rq-9sI">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kZ-fU-aij">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publish year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kZ-fU-aij">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="juc-rM-sEi">
-                            <rect key="frame" x="0.0" y="20.5" width="375" height="566.5"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baM-rZ-el1">
+                            <rect key="frame" x="0.0" y="20.5" width="375" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="4Ew-qK-7FC">
+                            <rect key="frame" x="0.0" y="41" width="375" height="128"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kqg-gY-Jss">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                </imageView>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="He1-TI-3r8">
+                                    <rect key="frame" x="177" y="54" width="20" height="20"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Kqg-gY-Jss" secondAttribute="trailing" id="8F0-6y-aza"/>
+                                <constraint firstItem="Kqg-gY-Jss" firstAttribute="top" secondItem="4Ew-qK-7FC" secondAttribute="top" id="Vm2-6I-mim"/>
+                                <constraint firstItem="He1-TI-3r8" firstAttribute="centerX" secondItem="4Ew-qK-7FC" secondAttribute="centerX" id="X2f-aR-FS8"/>
+                                <constraint firstItem="Kqg-gY-Jss" firstAttribute="leading" secondItem="4Ew-qK-7FC" secondAttribute="leading" id="mCY-r6-O6y"/>
+                                <constraint firstItem="He1-TI-3r8" firstAttribute="centerY" secondItem="4Ew-qK-7FC" secondAttribute="centerY" id="nN2-A3-baP"/>
+                                <constraint firstAttribute="bottom" secondItem="Kqg-gY-Jss" secondAttribute="bottom" id="uo3-se-487"/>
+                            </constraints>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qf-c9-uQn">
-                            <rect key="frame" x="0.0" y="587" width="375" height="30"/>
+                            <rect key="frame" x="0.0" y="169" width="375" height="448"/>
                             <state key="normal" title="Button"/>
                             <connections>
                                 <action selector="onGoodReadsButtonTap:" destination="-1" eventType="touchUpInside" id="jDE-d0-hwr"/>

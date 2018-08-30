@@ -18,6 +18,7 @@ struct Constants {
     struct URL {
         static let GoodReads = "https://www.goodreads.com/book/show/%@"
         static let OpenLibrary = "https://openlibrary.org/%@"
+        static let CoverImage = "https://covers.openlibrary.org/w/id/%d-M.jpg"
     }
 
     struct Delay {

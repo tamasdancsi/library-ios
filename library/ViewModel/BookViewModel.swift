@@ -15,8 +15,11 @@ class BookViewModel {
     fileprivate let yearVariable: BehaviorRelay<String> = BehaviorRelay(value: "")
     var year: Observable<String> { return yearVariable.asObservable() }
 
-    fileprivate let descriptionVariable: BehaviorRelay<String> = BehaviorRelay(value: "")
-    var description: Observable<String> { return descriptionVariable.asObservable() }
+    fileprivate let authorVariable: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var author: Observable<String> { return authorVariable.asObservable() }
+
+    fileprivate let coverImageVariable: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var coverImage: Observable<String> { return coverImageVariable.asObservable() }
 
     fileprivate let goodReadsIdVariable: BehaviorRelay<String?> = BehaviorRelay(value: nil)
     var goodReadsId: Observable<String?> { return goodReadsIdVariable.asObservable() }
@@ -49,9 +52,12 @@ class BookViewModel {
             yearVariable.accept("\(year)")
         }
 
-        // TODO: description
-        if let description = book.subtitle {
-            descriptionVariable.accept("\(description)")
+        if let author = book.authorName {
+            authorVariable.accept("\(author)")
+        }
+
+        if let coverImageId = book.coverI {
+            coverImageVariable.accept(String(format: Constants.URL.CoverImage, coverImageId))
         }
 
         let grId = book.idGoodreads?[0]

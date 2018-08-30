@@ -23,7 +23,7 @@ struct OpenLibraryBook: Codable {
     /// Key identifies the result's detail page on https://openlibrary.org/<key>
     let key: String?
 
-    /// Cover image reference. Can be used in the format of https://covers.openlibrary.org/w/id/<cover_i>.jpg or https://covers.openlibrary.org/w/id/<cover_i>-L.jpg
+    /// Cover image reference. Can be used in the format of https://covers.openlibrary.org/w/id/<cover_i>.jpg (optional -S, -M, -L works at the end)
     let coverI: Int?
 
     /// Optional goodreads book id. Can be used in the format of https://www.goodreads.com/book/show/<id_goodreads>
