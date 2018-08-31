@@ -12,13 +12,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookViewController" customModule="library" customModuleProvider="target">
             <connections>
-                <outlet property="authorLabel" destination="baM-rZ-el1" id="amD-KT-e0e"/>
+                <outlet property="authorLabel" destination="bA2-VI-p4d" id="6cU-eB-bcT"/>
                 <outlet property="coverImageView" destination="Kqg-gY-Jss" id="RVx-hW-UKg"/>
                 <outlet property="goodReadsButton" destination="8qf-c9-uQn" id="vUW-wT-8Of"/>
                 <outlet property="loadingIndicator" destination="He1-TI-3r8" id="sGU-Eq-QPn"/>
                 <outlet property="openLibraryButton" destination="9Dc-WW-qbi" id="eWr-2S-b6Y"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7BD-XT-cfe"/>
-                <outlet property="yearLabel" destination="2kZ-fU-aij" id="AUt-3o-Q00"/>
+                <outlet property="yearLabel" destination="Ogg-fz-EJt" id="3Gl-oB-8cI"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -29,26 +29,28 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="U5u-rq-9sI">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publish year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kZ-fU-aij">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baM-rZ-el1">
-                            <rect key="frame" x="0.0" y="20.5" width="375" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="4Ew-qK-7FC">
-                            <rect key="frame" x="0.0" y="41" width="375" height="128"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ogg-fz-EJt" customClass="InfoLabel" customModule="library" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="250" constant="100" id="Bpd-4T-uBm"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bA2-VI-p4d" customClass="InfoLabel" customModule="library" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="38" width="375" height="38"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="250" constant="100" id="5vq-yR-8W5"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="4Ew-qK-7FC">
+                            <rect key="frame" x="0.0" y="76" width="375" height="527"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kqg-gY-Jss">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqg-gY-Jss">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="527"/>
                                 </imageView>
                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="He1-TI-3r8">
-                                    <rect key="frame" x="177" y="54" width="20" height="20"/>
+                                    <rect key="frame" x="177" y="253.5" width="20" height="20"/>
                                 </activityIndicatorView>
                             </subviews>
                             <constraints>
@@ -61,21 +63,20 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qf-c9-uQn">
-                            <rect key="frame" x="0.0" y="169" width="375" height="448"/>
+                            <rect key="frame" x="0.0" y="603" width="375" height="30"/>
                             <state key="normal" title="Button"/>
                             <connections>
                                 <action selector="onGoodReadsButtonTap:" destination="-1" eventType="touchUpInside" id="jDE-d0-hwr"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dc-WW-qbi">
-                            <rect key="frame" x="0.0" y="617" width="375" height="30"/>
+                            <rect key="frame" x="0.0" y="633" width="375" height="14"/>
                             <state key="normal" title="Button"/>
                             <connections>
                                 <action selector="onOpenLibraryButtonTap:" destination="-1" eventType="touchUpInside" id="Wsu-7d-7EC"/>
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

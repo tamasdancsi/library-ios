@@ -12,6 +12,10 @@
 		E63C9CB2212421610069B86C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E63C9CB0212421610069B86C /* Localizable.strings */; };
 		E63C9CB4212423C10069B86C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C9CB3212423C10069B86C /* ListViewModel.swift */; };
 		E63C9CB5212423C10069B86C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C9CB3212423C10069B86C /* ListViewModel.swift */; };
+		E65EC8BD21396B34003D2197 /* OpenLibraryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EC8BC21396B34003D2197 /* OpenLibraryServiceTests.swift */; };
+		E65EC8C021397193003D2197 /* InfoLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65EC8BF21397193003D2197 /* InfoLabel.xib */; };
+		E65EC8C22139719E003D2197 /* InfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EC8C12139719E003D2197 /* InfoLabel.swift */; };
+		E65EC8C521397207003D2197 /* BaseInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EC8C421397207003D2197 /* BaseInjectable.swift */; };
 		E676EFFE2132B13B0060DD5D /* Linker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676EFFD2132B13B0060DD5D /* Linker.swift */; };
 		E676EFFF2132B13B0060DD5D /* Linker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676EFFD2132B13B0060DD5D /* Linker.swift */; };
 		E690A015212419AA00A74C28 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E690A014212419AA00A74C28 /* Constants.swift */; };
@@ -61,6 +65,10 @@
 		E63C9CB1212421610069B86C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E63C9CB3212423C10069B86C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		E65E967E2127F8E5003BC4A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E65EC8BC21396B34003D2197 /* OpenLibraryServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryServiceTests.swift; sourceTree = "<group>"; };
+		E65EC8BF21397193003D2197 /* InfoLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoLabel.xib; sourceTree = "<group>"; };
+		E65EC8C12139719E003D2197 /* InfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLabel.swift; sourceTree = "<group>"; };
+		E65EC8C421397207003D2197 /* BaseInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInjectable.swift; sourceTree = "<group>"; };
 		E676EFFD2132B13B0060DD5D /* Linker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Linker.swift; sourceTree = "<group>"; };
 		E690A014212419AA00A74C28 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E690A016212419EB00A74C28 /* BookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookViewController.xib; sourceTree = "<group>"; };
@@ -123,6 +131,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E65EC8BA21396B06003D2197 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E6D8910C211B06D400F5CB8A /* ListViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E65EC8BB21396B11003D2197 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E65EC8BC21396B34003D2197 /* OpenLibraryServiceTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E65EC8BE2139715A003D2197 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				E65EC8BF21397193003D2197 /* InfoLabel.xib */,
+				E65EC8C12139719E003D2197 /* InfoLabel.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		E65EC8C3213971F6003D2197 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E65EC8C421397207003D2197 /* BaseInjectable.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		E6D890EB211B06D300F5CB8A = {
 			isa = PBXGroup;
 			children = (
@@ -159,7 +200,8 @@
 		E6D8910B211B06D400F5CB8A /* libraryTests */ = {
 			isa = PBXGroup;
 			children = (
-				E6D8910C211B06D400F5CB8A /* ListViewModelTests.swift */,
+				E65EC8BB21396B11003D2197 /* Service */,
+				E65EC8BA21396B06003D2197 /* ViewModel */,
 				E6D8910E211B06D400F5CB8A /* Info.plist */,
 			);
 			path = libraryTests;
@@ -177,6 +219,8 @@
 		E6D89118211B28F900F5CB8A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E65EC8C3213971F6003D2197 /* Base */,
+				E65EC8BE2139715A003D2197 /* Label */,
 				E6D890F9211B06D300F5CB8A /* BookViewController.swift */,
 				E690A016212419EB00A74C28 /* BookViewController.xib */,
 				E6D89120211B45D000F5CB8A /* ListViewController.swift */,
@@ -311,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E63C9CB2212421610069B86C /* Localizable.strings in Resources */,
+				E65EC8C021397193003D2197 /* InfoLabel.xib in Resources */,
 				E6C94DAC212494A90015615C /* BookListViewCell.xib in Resources */,
 				E6D89102211B06D400F5CB8A /* LaunchScreen.storyboard in Resources */,
 				E6D890FF211B06D400F5CB8A /* Assets.xcassets in Resources */,
@@ -423,10 +468,12 @@
 				E6D8911F211B304600F5CB8A /* BookViewModel.swift in Sources */,
 				E676EFFE2132B13B0060DD5D /* Linker.swift in Sources */,
 				E6D8912F211B4C7B00F5CB8A /* OpenLibraryService.swift in Sources */,
+				E65EC8C22139719E003D2197 /* InfoLabel.swift in Sources */,
 				E6D8911D211B2B8A00F5CB8A /* OpenLibraryResult.swift in Sources */,
 				E6D89121211B45D000F5CB8A /* ListViewController.swift in Sources */,
 				E6D89123211B468F00F5CB8A /* Router.swift in Sources */,
 				E6D890F8211B06D300F5CB8A /* AppDelegate.swift in Sources */,
+				E65EC8C521397207003D2197 /* BaseInjectable.swift in Sources */,
 				E690A015212419AA00A74C28 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +489,7 @@
 				E676EFFF2132B13B0060DD5D /* Linker.swift in Sources */,
 				E6C94DAA2124949A0015615C /* BookListViewCell.swift in Sources */,
 				E6D89129211B46CA00F5CB8A /* AppDelegate.swift in Sources */,
+				E65EC8BD21396B34003D2197 /* OpenLibraryServiceTests.swift in Sources */,
 				E6D89130211B4C7B00F5CB8A /* OpenLibraryService.swift in Sources */,
 				E6D89124211B468F00F5CB8A /* Router.swift in Sources */,
 				E690A01A212419FF00A74C28 /* Constants.swift in Sources */,

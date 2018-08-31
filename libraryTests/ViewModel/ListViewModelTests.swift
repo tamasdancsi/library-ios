@@ -25,8 +25,8 @@ class ListViewModelTests: XCTestCase {
         // Start searching
         viewModel.queryVariable.accept("New test string")
 
-        // Wait a bit for the request to be sent
-        sleep(1)
+        // Wait until the request is surely sent
+        sleep(2)
 
         // Assert
         XCTAssertEqual(result, [true, false], "Starting search should start isLoading flag")

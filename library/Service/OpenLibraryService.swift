@@ -15,7 +15,7 @@ struct OpenLibraryService {
             .share(replay: 1)
     }
 
-    private func parse(_data: Data?) -> [OpenLibraryBook] {
+    internal func parse(_data: Data?) -> [OpenLibraryBook] {
         guard
             let data = _data else {
             return []

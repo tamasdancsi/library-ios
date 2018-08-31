@@ -4,8 +4,8 @@ import SDWebImage
 
 class BookViewController: UIViewController {
 
-    @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var yearLabel: InfoLabel!
+    @IBOutlet weak var authorLabel: InfoLabel!
     @IBOutlet weak var goodReadsButton: UIButton!
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -40,12 +40,16 @@ extension BookViewController {
 
         // Updating year label
         viewModel.year
-            .bind(to: yearLabel.rx.text)
+            .bind(onNext: { [weak self] year in
+                self?.yearLabel.set(title: year, label: NSLocalizedString("label_published_in", comment: ""))
+            })
             .disposed(by: disposeBag)
 
         // Updating author label
         viewModel.author
-            .bind(to: authorLabel.rx.text)
+            .bind(onNext: { [weak self] author in
+                self?.authorLabel.set(title: author, label: NSLocalizedString("label_author", comment: ""))
+            })
             .disposed(by: disposeBag)
 
         // Updating cover image
@@ -93,4 +97,3 @@ extension BookViewController {
         viewModel.openOnOpenLibrary()
     }
 }
-

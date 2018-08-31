@@ -53,7 +53,7 @@ class BookViewModel {
         }
 
         if let author = book.authorName {
-            authorVariable.accept("\(author)")
+            authorVariable.accept("\(author[0])")
         }
 
         if let coverImageId = book.coverI {

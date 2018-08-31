@@ -12,7 +12,7 @@ struct OpenLibraryResult: Codable {
     }
 }
 
-struct OpenLibraryBook: Codable {
+struct OpenLibraryBook: Codable, Equatable {
 
     let title: String?
     let subtitle: String?
@@ -39,4 +39,16 @@ struct OpenLibraryBook: Codable {
         case publisher
         case idGoodreads = "id_goodreads"
     }
+
+    public static func == (lhs: OpenLibraryBook, rhs: OpenLibraryBook) -> Bool {
+        return lhs.key == rhs.key &&
+            lhs.title == rhs.title &&
+            lhs.subtitle == rhs.subtitle &&
+            lhs.authorName == rhs.authorName &&
+            lhs.firstPublishYear == rhs.firstPublishYear &&
+            lhs.coverI == rhs.coverI &&
+            lhs.publisher == rhs.publisher &&
+            lhs.idGoodreads == rhs.idGoodreads
+    }
 }
+
