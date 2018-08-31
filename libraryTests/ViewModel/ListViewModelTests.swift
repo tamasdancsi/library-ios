@@ -22,13 +22,7 @@ class ListViewModelTests: XCTestCase {
             })
             .disposed(by: disposeBag)
 
-        // Start searching
-        viewModel.queryVariable.accept("New test string")
-
-        // Wait until the request is surely sent
-        sleep(2)
-
         // Assert
-        XCTAssertEqual(result, [true, false], "Starting search should start isLoading flag")
+        XCTAssertEqual(result, [true], "Starting search should start isLoading flag")
     }
 }

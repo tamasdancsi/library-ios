@@ -2,3 +2,6 @@ language: objective-c
 xcode_workspace: library.xcworkspace
 xcode_scheme: library
 xcode_destination: platform=iOS Simulator,OS=11.4,name=iPhone 7
+cache:
+  - bundler
+  - cocoapods

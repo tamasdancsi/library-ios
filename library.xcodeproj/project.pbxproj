@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3A1448BCA0592055AF2B1400 /* Pods_library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368E186F522E029584DAB28D /* Pods_library.framework */; };
 		652A5DA7193C2E34715D31C9 /* Pods_libraryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4571A99A38E93F96E170EC /* Pods_libraryTests.framework */; };
+		E6205C1121398797002448EB /* InfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EC8C12139719E003D2197 /* InfoLabel.swift */; };
+		E6205C12213987F3002448EB /* BaseInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EC8C421397207003D2197 /* BaseInjectable.swift */; };
 		E63C9CB2212421610069B86C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E63C9CB0212421610069B86C /* Localizable.strings */; };
 		E63C9CB4212423C10069B86C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C9CB3212423C10069B86C /* ListViewModel.swift */; };
 		E63C9CB5212423C10069B86C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C9CB3212423C10069B86C /* ListViewModel.swift */; };
@@ -483,16 +485,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6D89125211B46BF00F5CB8A /* OpenLibraryResult.swift in Sources */,
+				E6205C12213987F3002448EB /* BaseInjectable.swift in Sources */,
+				E6C94DAA2124949A0015615C /* BookListViewCell.swift in Sources */,
 				E6D89126211B46C100F5CB8A /* BookViewController.swift in Sources */,
 				E6D89127211B46C300F5CB8A /* ListViewController.swift in Sources */,
 				E6D89128211B46C800F5CB8A /* BookViewModel.swift in Sources */,
 				E676EFFF2132B13B0060DD5D /* Linker.swift in Sources */,
-				E6C94DAA2124949A0015615C /* BookListViewCell.swift in Sources */,
 				E6D89129211B46CA00F5CB8A /* AppDelegate.swift in Sources */,
 				E65EC8BD21396B34003D2197 /* OpenLibraryServiceTests.swift in Sources */,
 				E6D89130211B4C7B00F5CB8A /* OpenLibraryService.swift in Sources */,
 				E6D89124211B468F00F5CB8A /* Router.swift in Sources */,
 				E690A01A212419FF00A74C28 /* Constants.swift in Sources */,
+				E6205C1121398797002448EB /* InfoLabel.swift in Sources */,
 				E6D8910D211B06D400F5CB8A /* ListViewModelTests.swift in Sources */,
 				E63C9CB5212423C10069B86C /* ListViewModel.swift in Sources */,
 			);
