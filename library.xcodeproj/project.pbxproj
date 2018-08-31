@@ -28,6 +28,7 @@
 		E6C94DAA2124949A0015615C /* BookListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C94DA82124949A0015615C /* BookListViewCell.swift */; };
 		E6C94DAC212494A90015615C /* BookListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C94DAB212494A90015615C /* BookListViewCell.xib */; };
 		E6C94DAD212494A90015615C /* BookListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C94DAB212494A90015615C /* BookListViewCell.xib */; };
+		E6D22F082139A439002216CC /* BookViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D22F072139A439002216CC /* BookViewModelTests.swift */; };
 		E6D890F8211B06D300F5CB8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D890F7211B06D300F5CB8A /* AppDelegate.swift */; };
 		E6D890FA211B06D300F5CB8A /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D890F9211B06D300F5CB8A /* BookViewController.swift */; };
 		E6D890FF211B06D400F5CB8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6D890FE211B06D400F5CB8A /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		E690A018212419F900A74C28 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		E6C94DA82124949A0015615C /* BookListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewCell.swift; sourceTree = "<group>"; };
 		E6C94DAB212494A90015615C /* BookListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookListViewCell.xib; sourceTree = "<group>"; };
+		E6D22F072139A439002216CC /* BookViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModelTests.swift; sourceTree = "<group>"; };
 		E6D890F4211B06D300F5CB8A /* library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = library.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D890F7211B06D300F5CB8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6D890F9211B06D300F5CB8A /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				E6D8910C211B06D400F5CB8A /* ListViewModelTests.swift */,
+				E6D22F072139A439002216CC /* BookViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				E6D89124211B468F00F5CB8A /* Router.swift in Sources */,
 				E690A01A212419FF00A74C28 /* Constants.swift in Sources */,
 				E6205C1121398797002448EB /* InfoLabel.swift in Sources */,
+				E6D22F082139A439002216CC /* BookViewModelTests.swift in Sources */,
 				E6D8910D211B06D400F5CB8A /* ListViewModelTests.swift in Sources */,
 				E63C9CB5212423C10069B86C /* ListViewModel.swift in Sources */,
 			);

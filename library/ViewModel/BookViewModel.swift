@@ -37,7 +37,8 @@ class BookViewModel {
     // Initialization and book updating
     //
 
-    init(_ book: OpenLibraryBook) {
+    convenience init(_ book: OpenLibraryBook) {
+        self.init()
         updateBook(book)
     }
 

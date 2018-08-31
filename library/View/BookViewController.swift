@@ -34,12 +34,15 @@ extension BookViewController {
 
     private func initBindings() {
         // Updating view controller title
-        viewModel.title.bind(onNext: { [weak self] title in
-            self?.title = title
-        }).disposed(by: disposeBag)
+        viewModel.title
+            .observeOn(MainScheduler.instance)
+            .bind(onNext: { [weak self] title in
+                self?.title = title
+            }).disposed(by: disposeBag)
 
         // Updating year label
         viewModel.year
+            .observeOn(MainScheduler.instance)
             .bind(onNext: { [weak self] year in
                 self?.yearLabel.set(title: year, label: NSLocalizedString("label_published_in", comment: ""))
             })
@@ -47,6 +50,7 @@ extension BookViewController {
 
         // Updating author label
         viewModel.author
+            .observeOn(MainScheduler.instance)
             .bind(onNext: { [weak self] author in
                 self?.authorLabel.set(title: author, label: NSLocalizedString("label_author", comment: ""))
             })
@@ -54,6 +58,7 @@ extension BookViewController {
 
         // Updating cover image
         viewModel.coverImage
+            .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] imageUrl in
                     guard let url = URL(string: imageUrl) else {
@@ -74,12 +79,14 @@ extension BookViewController {
 
         // Updating good reads button
         viewModel.isGoodReadsButtonHidden
+            .observeOn(MainScheduler.instance)
             .bind(to: goodReadsButton.rx.isHidden)
             .disposed(by: disposeBag)
         goodReadsButton.setTitle(NSLocalizedString("button_open_goodreads", comment: ""), for: .normal)
 
         // Updating open library button
         viewModel.isOpenLibraryButtonHidden
+            .observeOn(MainScheduler.instance)
             .bind(to: openLibraryButton.rx.isHidden)
             .disposed(by: disposeBag)
         openLibraryButton.setTitle(NSLocalizedString("button_open_openlibrary", comment: ""), for: .normal)
