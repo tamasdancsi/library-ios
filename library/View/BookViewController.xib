@@ -14,9 +14,9 @@
             <connections>
                 <outlet property="authorLabel" destination="bA2-VI-p4d" id="6cU-eB-bcT"/>
                 <outlet property="coverImageView" destination="Kqg-gY-Jss" id="RVx-hW-UKg"/>
-                <outlet property="goodReadsButton" destination="8qf-c9-uQn" id="vUW-wT-8Of"/>
+                <outlet property="goodReadsButton" destination="F4V-qj-QW6" id="JHI-dh-pjS"/>
                 <outlet property="loadingIndicator" destination="He1-TI-3r8" id="sGU-Eq-QPn"/>
-                <outlet property="openLibraryButton" destination="9Dc-WW-qbi" id="eWr-2S-b6Y"/>
+                <outlet property="openLibraryButton" destination="jib-Ni-x3S" id="PUZ-6B-CVR"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7BD-XT-cfe"/>
                 <outlet property="yearLabel" destination="Ogg-fz-EJt" id="3Gl-oB-8cI"/>
             </connections>
@@ -33,24 +33,26 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" priority="250" constant="100" id="Bpd-4T-uBm"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="40" id="AQw-MP-jaY"/>
+                                <constraint firstAttribute="height" priority="250" constant="40" id="uk7-hB-Vqm"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bA2-VI-p4d" customClass="InfoLabel" customModule="library" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="38" width="375" height="38"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" priority="250" constant="100" id="5vq-yR-8W5"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="40" id="D9L-0R-QYS"/>
+                                <constraint firstAttribute="height" priority="250" constant="40" id="VW5-1x-ubO"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="4Ew-qK-7FC">
-                            <rect key="frame" x="0.0" y="76" width="375" height="527"/>
+                            <rect key="frame" x="0.0" y="76" width="375" height="487"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqg-gY-Jss">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="527"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="487"/>
                                 </imageView>
                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="He1-TI-3r8">
-                                    <rect key="frame" x="177" y="253.5" width="20" height="20"/>
+                                    <rect key="frame" x="177" y="233.5" width="20" height="20"/>
                                 </activityIndicatorView>
                             </subviews>
                             <constraints>
@@ -62,20 +64,22 @@
                                 <constraint firstAttribute="bottom" secondItem="Kqg-gY-Jss" secondAttribute="bottom" id="uo3-se-487"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qf-c9-uQn">
-                            <rect key="frame" x="0.0" y="603" width="375" height="30"/>
-                            <state key="normal" title="Button"/>
-                            <connections>
-                                <action selector="onGoodReadsButtonTap:" destination="-1" eventType="touchUpInside" id="jDE-d0-hwr"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dc-WW-qbi">
-                            <rect key="frame" x="0.0" y="633" width="375" height="14"/>
-                            <state key="normal" title="Button"/>
-                            <connections>
-                                <action selector="onOpenLibraryButtonTap:" destination="-1" eventType="touchUpInside" id="Wsu-7d-7EC"/>
-                            </connections>
-                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4V-qj-QW6" customClass="Tappable" customModule="library" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="563" width="375" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="40" id="rxO-Yd-m3G"/>
+                                <constraint firstAttribute="height" priority="250" constant="40" id="soC-y9-1qh"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jib-Ni-x3S" customClass="Tappable" customModule="library" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="607" width="375" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="250" constant="40" id="OQp-3M-HcB"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="40" id="xyB-hS-JjP"/>
+                            </constraints>
+                        </view>
                     </subviews>
                 </stackView>
             </subviews>

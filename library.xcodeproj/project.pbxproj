@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3A1448BCA0592055AF2B1400 /* Pods_library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368E186F522E029584DAB28D /* Pods_library.framework */; };
 		652A5DA7193C2E34715D31C9 /* Pods_libraryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4571A99A38E93F96E170EC /* Pods_libraryTests.framework */; };
+		E61543BD21412627000998FC /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61543BC21412627000998FC /* Tappable.swift */; };
+		E61543BE21412627000998FC /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61543BC21412627000998FC /* Tappable.swift */; };
+		E61543C021412632000998FC /* Tappable.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61543BF21412632000998FC /* Tappable.xib */; };
 		E6205C1121398797002448EB /* InfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EC8C12139719E003D2197 /* InfoLabel.swift */; };
 		E6205C12213987F3002448EB /* BaseInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EC8C421397207003D2197 /* BaseInjectable.swift */; };
 		E63C9CB2212421610069B86C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E63C9CB0212421610069B86C /* Localizable.strings */; };
@@ -65,6 +68,8 @@
 		7B4571A99A38E93F96E170EC /* Pods_libraryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_libraryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F6057AEAABFC414267D8EB0 /* Pods-library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-library.release.xcconfig"; path = "Pods/Target Support Files/Pods-library/Pods-library.release.xcconfig"; sourceTree = "<group>"; };
 		9D9A4445C41C309EE8D47B75 /* Pods-library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-library.debug.xcconfig"; path = "Pods/Target Support Files/Pods-library/Pods-library.debug.xcconfig"; sourceTree = "<group>"; };
+		E61543BC21412627000998FC /* Tappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
+		E61543BF21412632000998FC /* Tappable.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Tappable.xib; sourceTree = "<group>"; };
 		E63C9CB1212421610069B86C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E63C9CB3212423C10069B86C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		E65E967E2127F8E5003BC4A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -133,6 +138,16 @@
 				63DEB44E28026474066960D3 /* Pods-libraryTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E61543BB214125FB000998FC /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				E61543BC21412627000998FC /* Tappable.swift */,
+				E61543BF21412632000998FC /* Tappable.xib */,
+			);
+			name = Button;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		E65EC8BA21396B06003D2197 /* ViewModel */ = {
@@ -226,6 +241,7 @@
 			children = (
 				E65EC8C3213971F6003D2197 /* Base */,
 				E65EC8BE2139715A003D2197 /* Label */,
+				E61543BB214125FB000998FC /* Button */,
 				E6D890F9211B06D300F5CB8A /* BookViewController.swift */,
 				E690A016212419EB00A74C28 /* BookViewController.xib */,
 				E6D89120211B45D000F5CB8A /* ListViewController.swift */,
@@ -368,6 +384,7 @@
 				E6D890FF211B06D400F5CB8A /* Assets.xcassets in Resources */,
 				E690A019212419F900A74C28 /* ListViewController.xib in Resources */,
 				E690A017212419EB00A74C28 /* BookViewController.xib in Resources */,
+				E61543C021412632000998FC /* Tappable.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +523,7 @@
 				E676EFFE2132B13B0060DD5D /* Linker.swift in Sources */,
 				E6D8912F211B4C7B00F5CB8A /* OpenLibraryService.swift in Sources */,
 				E65EC8C22139719E003D2197 /* InfoLabel.swift in Sources */,
+				E61543BD21412627000998FC /* Tappable.swift in Sources */,
 				E6D8911D211B2B8A00F5CB8A /* OpenLibraryResult.swift in Sources */,
 				E6D89121211B45D000F5CB8A /* ListViewController.swift in Sources */,
 				E6D89123211B468F00F5CB8A /* Router.swift in Sources */,
@@ -535,6 +553,7 @@
 				E6D22F082139A439002216CC /* BookViewModelTests.swift in Sources */,
 				E6D8910D211B06D400F5CB8A /* ListViewModelTests.swift in Sources */,
 				E63C9CB5212423C10069B86C /* ListViewModel.swift in Sources */,
+				E61543BE21412627000998FC /* Tappable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

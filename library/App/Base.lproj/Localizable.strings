@@ -1,11 +1,3 @@
-/* 
-  Localizable.strings
-  library
-
-  Created by Tamas Dancsi on 15.08.18.
-  Copyright © 2018 Tamas Dancsi. All rights reserved.
-*/
-
 "title_my_books" = "My books";
 "title_n_results" = "%d results";
 

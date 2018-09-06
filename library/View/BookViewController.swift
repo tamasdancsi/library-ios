@@ -2,14 +2,14 @@ import UIKit
 import RxSwift
 import SDWebImage
 
-class BookViewController: UIViewController {
+class BookViewController: UIViewController, TappableDelegate {
 
     @IBOutlet weak var yearLabel: InfoLabel!
     @IBOutlet weak var authorLabel: InfoLabel!
-    @IBOutlet weak var goodReadsButton: UIButton!
+    @IBOutlet weak var goodReadsButton: Tappable!
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var openLibraryButton: UIButton!
+    @IBOutlet weak var openLibraryButton: Tappable!
 
     private var viewModel: BookViewModel!
     private let disposeBag = DisposeBag()
@@ -82,25 +82,27 @@ extension BookViewController {
             .observeOn(MainScheduler.instance)
             .bind(to: goodReadsButton.rx.isHidden)
             .disposed(by: disposeBag)
-        goodReadsButton.setTitle(NSLocalizedString("button_open_goodreads", comment: ""), for: .normal)
+        goodReadsButton.set(title: NSLocalizedString("button_open_goodreads", comment: ""), label: nil)
+        goodReadsButton.delegate = self
 
         // Updating open library button
         viewModel.isOpenLibraryButtonHidden
             .observeOn(MainScheduler.instance)
             .bind(to: openLibraryButton.rx.isHidden)
             .disposed(by: disposeBag)
-        openLibraryButton.setTitle(NSLocalizedString("button_open_openlibrary", comment: ""), for: .normal)
+        openLibraryButton.set(title: NSLocalizedString("button_open_openlibrary", comment: ""), label: nil)
+        openLibraryButton.delegate = self
     }
 }
 
 // MARK: - Action handling
 extension BookViewController {
 
-    @IBAction func onGoodReadsButtonTap(_ sender: Any) {
-        viewModel.openOnGoodReads()
-    }
-
-    @IBAction func onOpenLibraryButtonTap(_ sender: Any) {
-        viewModel.openOnOpenLibrary()
+    func onTappableTap(_ sender: Tappable) {
+        if sender == openLibraryButton {
+            viewModel.openOnOpenLibrary()
+        } else {
+            viewModel.openOnGoodReads()
+        }
     }
 }
