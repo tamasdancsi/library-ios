@@ -21,6 +21,7 @@ class BaseInjectable: UIView {
     }
 
     func initXib() {
+        if contentView != nil { return }
         guard let view = loadViewFromNib() else { return }
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -28,11 +29,10 @@ class BaseInjectable: UIView {
         contentView = view
     }
 
-
     func loadViewFromNib() -> UIView? {
         let bundle = Bundle(for: type(of: self))
         let name = String(describing: type(of: self))
-        if (Bundle.main.path(forResource: name, ofType: "nib") == nil) {
+        if (bundle.path(forResource: name, ofType: "nib") == nil) {
             print("[BaseInjectable] error: missing nib file with name:", name)
             return nil
         }

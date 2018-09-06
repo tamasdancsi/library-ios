@@ -286,6 +286,7 @@
 				E6D890F1211B06D300F5CB8A /* Frameworks */,
 				E6D890F2211B06D300F5CB8A /* Resources */,
 				5B703EB3EF191C01FA7F35C7 /* [CP] Embed Pods Frameworks */,
+				CD1E5A7AEE6D76CC2812F12E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -305,6 +306,7 @@
 				E6D89105211B06D400F5CB8A /* Frameworks */,
 				E6D89106211B06D400F5CB8A /* Resources */,
 				B5C390203E52F8B1E302FEF3 /* [CP] Embed Pods Frameworks */,
+				A7BC45248FC7CF3B28576ACA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -420,6 +422,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-library/Pods-library-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A7BC45248FC7CF3B28576ACA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-libraryTests/Pods-libraryTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B5C390203E52F8B1E302FEF3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,6 +457,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-libraryTests/Pods-libraryTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD1E5A7AEE6D76CC2812F12E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-library/Pods-library-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D6B126A9ED5DEB177265DDC3 /* [CP] Check Pods Manifest.lock */ = {
@@ -540,6 +572,7 @@
 		E6D8910F211B06D400F5CB8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -600,6 +633,7 @@
 		E6D89110211B06D400F5CB8A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -691,7 +725,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02E63771762EBBB015AB553F /* Pods-libraryTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = libraryTests/Info.plist;
@@ -712,7 +746,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 63DEB44E28026474066960D3 /* Pods-libraryTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = libraryTests/Info.plist;
