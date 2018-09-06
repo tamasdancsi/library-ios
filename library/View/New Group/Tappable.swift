@@ -6,21 +6,28 @@ protocol TappableDelegate: AnyObject {
 
 class Tappable: BaseInjectable {
 
-    @IBInspectable @IBOutlet weak var button: UIButton!
     @IBInspectable @IBOutlet weak var titleLabel: UILabel!
+    @IBInspectable @IBOutlet weak var descriptionLabel: UILabel!
 
     weak var delegate: TappableDelegate?
+    fileprivate var tapRecognizer: UITapGestureRecognizer!
 
-    public func set(title: String, label: String?) {
-        self.button.setTitle(title, for: .normal)
-        self.titleLabel.text = label
+    override func setupView() {
+        if tapRecognizer != nil { return }
+        tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
+        self.addGestureRecognizer(tapRecognizer)
+    }
+
+    public func set(title: String, description: String?) {
+        self.titleLabel.text = title
+        self.descriptionLabel.text = description
     }
 }
 
 // MARK: - Action handling
 extension Tappable {
 
-    @IBAction func onButtonTap(_ sender: Any) {
+    @objc func handleTap(sender: UITapGestureRecognizer? = nil) {
         delegate?.onTappableTap(self)
     }
 }

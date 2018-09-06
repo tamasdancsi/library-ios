@@ -5,28 +5,32 @@ class BaseInjectable: UIView {
 
     @IBInspectable var contentView: UIView?
 
+    // Inherited classes may override this
+    func setupView() {}
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        initXib()
+        setup()
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        initXib()
+        setup()
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initXib()
+        setup()
     }
 
-    func initXib() {
+    func setup() {
         if contentView != nil { return }
         guard let view = loadViewFromNib() else { return }
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(view)
         contentView = view
+        setupView()
     }
 
     func loadViewFromNib() -> UIView? {
@@ -42,7 +46,7 @@ class BaseInjectable: UIView {
 
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        initXib()
+        setup()
         contentView?.prepareForInterfaceBuilder()
     }
 }

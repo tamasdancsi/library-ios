@@ -82,7 +82,10 @@ extension BookViewController {
             .observeOn(MainScheduler.instance)
             .bind(to: goodReadsButton.rx.isHidden)
             .disposed(by: disposeBag)
-        goodReadsButton.set(title: NSLocalizedString("button_open_goodreads", comment: ""), label: nil)
+        goodReadsButton.set(
+            title: NSLocalizedString("button_open_goodreads", comment: ""),
+            description: NSLocalizedString("label_open_goodreads", comment: "")
+        )
         goodReadsButton.delegate = self
 
         // Updating open library button
@@ -90,7 +93,10 @@ extension BookViewController {
             .observeOn(MainScheduler.instance)
             .bind(to: openLibraryButton.rx.isHidden)
             .disposed(by: disposeBag)
-        openLibraryButton.set(title: NSLocalizedString("button_open_openlibrary", comment: ""), label: nil)
+        openLibraryButton.set(
+            title: NSLocalizedString("button_open_openlibrary", comment: ""),
+            description: NSLocalizedString("label_open_openlibrary", comment: "")
+        )
         openLibraryButton.delegate = self
     }
 }

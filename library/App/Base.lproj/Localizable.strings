@@ -8,3 +8,5 @@
 
 "label_published_in" = "published in";
 "label_author" = "author";
+"label_open_openlibrary" = "Open book details on Open Library";
+"label_open_goodreads" = "Opens book details on Goodreads";
