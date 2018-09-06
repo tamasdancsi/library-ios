@@ -82,4 +82,3 @@ class BookViewModel {
         Linker.shared.openOnOpenLibrary(openLibraryId: openLibraryIdVariable.value)
     }
 }
-
